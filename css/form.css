@@ -1,0 +1,285 @@
+/* ---------- Colors ---------- */
+
+:root {
+    --color-primary: #394a59;
+    --color-primary-light: #59758d;
+    --color-secondary: #36BF7F;
+    --color-accent: #D96666;
+    --color-text: #fff;
+    --color-border: #D3D3D3;
+}
+
+/* ---------- Colors END ---------- */
+
+/* ---------- CSS reset ---------- */
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  dd {
+  margin: 0 0 1.5rem;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  
+  html {
+      line-height: 1.5;
+      font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a {
+    text-decoration-skip-ink: auto;
+    color: var(--color-secondary);
+  }
+  
+  a:hover,
+  a:focus {
+      color: var(--color-accent);
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture,
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+  
+  svg {
+      fill: currentColor;
+  }
+  
+  svg:not(:root) {
+      overflow: hidden;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+     scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* --------- CSS reset - END --------- */
+
+  /* ---------- Containers ---------- */
+  
+  .container {
+    width: min(65em, 100%);
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+  /* ---------- Containers END ---------- */
+
+/* ---------- BTN ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 0.55em 1.5em 0.5em;
+    background-color: var(--color-primary);
+    border: 0.125rem solid var(--color-primary);
+    color: var(--color-text);
+    border-radius: 0.25em;
+
+    text-decoration: none;
+
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    color: var(--color-text);
+}
+
+/* ---------- BTN END---------- */
+
+/* ---------- Typography ---------- */
+
+h1 {
+    font-size: 2.019rem;
+    line-height: 1.3;
+}
+
+/* ---------- Typography END---------- */
+
+section {
+  background-color: var(--color-secondary);
+}
+
+.form {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+fieldset {
+  max-width: 30rem;
+  display: contents;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-text);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 .25rem 1rem #0002;
+
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+input:where(
+    [type="text"],
+    [type="email"],
+    [type="tel"],
+    [type="radio"],
+    [type="flowers"],
+    [type="message"]
+  ),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.3rem;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid,
+input[type="tel"]:valid,
+select:valid {
+  border-color: var(--color-secondary);
+}
+
+[type="radio"] {
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="checkbox"] + label,
+[type="radio"] + label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-weight: 400;
+  text-transform: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+
+label,
+.label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.radio-grid {
+  display: grid;
+  --cols: 1;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 1rem;
+  accent-color: var(--color-accent);
+}
+
+.checkbox-wrap {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.checkbox-wrap input {
+  margin-right: 0.25rem;
+}
+
+
+@media only screen and (min-width: 45em) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full {
+    grid-column: 1 / -1;
+  }
+
+  .radio-grid {
+    --cols: 2;
+  }
+}
